@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Copyright (c) 2017 Wander Boessenkool (HCS Company)
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
@@ -136,7 +136,7 @@ def getAuthToken(params):
               "organization": params['organization'], "domain": params['domain'] }
   try:
     r = requests.post(params['uri']+"Authenticate", data=payload, verify=False)
-  except Exception,e:
+  except Exception as e:
     return False, "Error opening URL"+str(e)
   if not r.ok:
     return False, r.reason
